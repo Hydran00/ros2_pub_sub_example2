@@ -35,6 +35,15 @@ ament_target_dependencies(
     ${ROS2_REQUIRED_COMPONENTS}
 )
 
+add_executable(
+    publisher
+    ${CMAKE_CURRENT_LIST_DIR}/src/publisher.cpp
+)
+ament_target_dependencies(
+    publisher
+    ${ROS2_REQUIRED_COMPONENTS}
+)
+
 # Publisher
 
 
@@ -45,7 +54,7 @@ ament_target_dependencies(
 # |___|_| |_|___/\__\__,_|_|_|
 #
 install(
-    TARGETS subscriber
+    TARGETS subscriber publisher
     DESTINATION lib/${PROJECT_NAME}
 )
 
